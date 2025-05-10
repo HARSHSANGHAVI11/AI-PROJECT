@@ -1,0 +1,166 @@
+Date: 22/9/2023
+Time: 16:10
+Phone Number: +919106626195
+Message: Geeks For Geeks!
+--------------------
+Date: 22/9/2023
+Time: 16:12
+Phone Number: +919106626195
+Message: screenshot.png
+--------------------
+Date: 22/9/2023
+Time: 16:32
+Phone Number: +919106626195
+Image: C:/Users/Mayank/Downloads/Adaptive-Traffic-Signal-Timer-main/Code/YOLO/darkflow/screenshot.png
+Caption: testing
+--------------------
+Date: 22/9/2023
+Time: 16:34
+Phone Number: +919106626195
+Image: C:/Users/Mayank/Downloads/Adaptive-Traffic-Signal-Timer-main/Code/YOLO/darkflow/screenshot.png
+Caption: testing
+--------------------
+Date: 22/9/2023
+Time: 16:37
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 22/9/2023
+Time: 16:39
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 22/9/2023
+Time: 16:43
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 17:38
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 17:39
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 17:40
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 17:41
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 17:53
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 18:1
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 18:5
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 18:9
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 18:11
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured
+--------------------
+Date: 23/9/2023
+Time: 18:21
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured Gondal Chowk
+--------------------
+Date: 23/9/2023
+Time: 18:22
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured Shaduvaswani Raod
+--------------------
+Date: 23/9/2023
+Time: 18:23
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured Shaduvaswani Raod
+--------------------
+Date: 23/9/2023
+Time: 18:32
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Gondal Chowk
+--------------------
+Date: 24/9/2023
+Time: 8:48
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Gondal Chowk
+--------------------
+Date: 24/9/2023
+Time: 8:50
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Indira Circle
+--------------------
+Date: 24/9/2023
+Time: 8:51
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Madhapar Chowk
+--------------------
+Date: 24/9/2023
+Time: 9:10
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Bus Stand Raod
+--------------------
+Date: 24/9/2023
+Time: 9:13
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Gondal Chowk
+--------------------
+Date: 24/9/2023
+Time: 9:14
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Shaduvaswani Raod
+--------------------
+Date: 24/9/2023
+Time: 9:18
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Bus Stand Road
+--------------------
+Date: 24/9/2023
+Time: 9:21
+Phone Number: +919106626195
+Image: screenshot.png
+Caption: Accident Occured at Gondal Chowk
+--------------------

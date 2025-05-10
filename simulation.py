@@ -1,46 +1,30 @@
+#flask framework for web or design or api
+#web brwoser use for accepting url in browser
+#threading to run multiple task in a one com
+#pygame to develop 2d game and show graphics
+#
+#E:\BTECH\dmgt-sem3\project dmgt sem3\Traffic1\Accident\Code\YOLO\darkflow\images\mod_int.png
 # *** IMAGE XY COOD IS TOP LEFT
 import random
 import math
+import webbrowser
 import time
 import threading
-from twilio.rest import Client
-import webbrowser
 # from vehicle_detection import detection
 import pygame
 import sys
 import os
-
-# options={
-#    'model':'./cfg/yolo.cfg',     #specifying the path of model
-#    'load':'./bin/yolov2.weights',   #weights
-#    'threshold':0.3     #minimum confidence factor to create a box, greater than 0.3 good
-# }
-
+import pywhatkit #interface with whatsapp msg and image
+import pyautogui #moving
+from PIL import Image #import from image liberary and save in different format and opening and sending images 
 # tfnet=TFNet(options)    #READ ABOUT TFNET
 
 # Default values of signal times
-rcnumber = ["GJO3FG5565", "GJ11GG2045", "GJ36AB5561","GJ18AA7139","MH10MH7889"]
-carname = ["Fortuner", "Thar", "Scorpio","Endevour","Verna"]
-
 defaultRed = 150
 defaultYellow = 5
 defaultGreen = 20
 defaultMinimum = 10
 defaultMaximum = 60
-
-small_image_x = 80
-small_image_y = 80
-car1_x, car1_y = 50, 400
-car2_x, car2_y = 10, 400
-car1_speed = 4
-car2_speed = 3
-error=0
-scrshot = 50
-i = 0
-
-account_sid = 'AC379eab59c257f1db5cae52fa7bc970a3'
-auth_token = 'ad08320a1fada9ca6fef6f099c39cf70'
-client = Client(account_sid, auth_token)
 
 signals = []
 noOfSignals = 4
@@ -50,6 +34,9 @@ timeElapsed = 0
 currentGreen = 0   # Indicates which signal is green
 nextGreen = (currentGreen+1)%noOfSignals
 currentYellow = 0   # Indicates whether yellow signal is on or off 
+
+locations = ["Madhapar Chowk", "Indira Circle", "Gondal Chowk","Shaduvaswani Road","Bus Stand Road"]
+
 
 # Average times for vehicles to pass the intersection
 carTime = 2
@@ -127,11 +114,10 @@ class Vehicle(pygame.sprite.Sprite):
         vehicles[direction][lane].append(self)
         # self.stop = stops[direction][lane]
         self.index = len(vehicles[direction][lane]) - 1
-        path = "E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Lane/Code/YOLO/darkflow/images/" + direction + "/" + vehicleClass + ".png"
+        path = "E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/images/" + direction + "/" + vehicleClass + ".png"
         self.originalImage = pygame.image.load(path)
         self.currentImage = pygame.image.load(path)
 
-    
         if(direction=='right'):
             if(len(vehicles[direction][lane])>1 and vehicles[direction][lane][self.index-1].crossed==0):    # if more than 1 vehicle in the lane of vehicle before it has crossed stop line
                 self.stop = vehicles[direction][lane][self.index-1].stop - vehicles[direction][lane][self.index-1].currentImage.get_rect().width - gap         # setting stop coordinate as: stop coordinate of next vehicle - width of next vehicle - gap
@@ -438,7 +424,6 @@ def simulationTime():
             os._exit(1)
     
 
-
 class Main:
     thread4 = threading.Thread(name="simulationTime",target=simulationTime, args=()) 
     thread4.daemon = True
@@ -451,70 +436,73 @@ class Main:
     # Colours 
     black = (0, 0, 0)
     white = (255, 255, 255)
-    red = (255, 0, 0)
-    yellow = (255, 255, 0)
 
     # Screensize 
     screenWidth = 1400
     screenHeight = 800
-    CENTER_X = screenWidth // 3
     screenSize = (screenWidth, screenHeight)
 
     # Setting background image i.e. image of intersection
-    background = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Lane/Code/YOLO/darkflow/images/mod_int.png')
+    background = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/images/mod_int.png')
 
     screen = pygame.display.set_mode(screenSize)
-    pygame.display.set_caption("SIMULATION")
+    pygame.display.set_caption("Traffic Stimulation")
 
     # Loading signal images and font
-    redSignal = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Lane/Code/YOLO/darkflow/images/signals/red.png')
-    yellowSignal = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Lane/Code/YOLO/darkflow/images/signals/yellow.png')
-    greenSignal = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Lane/Code/YOLO/darkflow/images/signals/green.png')
-    car1_img = pygame.image.load("E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Lane/Code/YOLO/darkflow/images/right/car.png")  # Replace with your car image path
-    car2_img = pygame.image.load("E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Lane/Code/YOLO/darkflow/images/right/bike.png")
-
+    redSignal = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/images/signals/red.png')
+    yellowSignal = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/images/signals/yellow.png')
+    greenSignal = pygame.image.load('E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/images/signals/green.png')
+    img1 = pygame.image.load("E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/images/car1.png")
+    img2 = pygame.image.load("E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/images/car2.jpg")
     font = pygame.font.Font(None, 30)
 
     thread3 = threading.Thread(name="generateVehicles",target=generateVehicles, args=())    # Generating vehicles
     thread3.daemon = True
     thread3.start()
-    global car1_x, car2_x, car2_speed, car2_y
-    clock = pygame.time.Clock()
-    overtaking = False
+
+    img1_x, img1_y = 0, screenHeight // 2 - img1.get_height() // 3
+    img2_x, img2_y = screenWidth - img2.get_width(), screenHeight // 2 - img2.get_height() // 2
+
+    # Movement speeds
+    img1_speed = 5
+    img2_speed = -5
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
 
-        screen.blit(background,(0,0))   # display background in simulation
-        
-        car1_x += car1_speed
-        car2_x += car2_speed
-        if not overtaking and car1_x >= CENTER_X - car1_img.get_width():
-            overtaking = True
-            car2_y = 440
-            car2_speed = 8 
-            selected_rc = random.choice(rcnumber)
-            selected_car = random.choice(carname)
-            error = 1
+        img1_x += img1_speed
+        img2_x += img2_speed
+
+        if img1_x + img1.get_width() > img2_x and img1_x < img2_x + img2.get_width():
+            print("Collision occurred!")
+            screenshot = pyautogui.screenshot()
+            selected_location = random.choice(locations)
+            width, height = screenshot.size
+            center_width = width // 2
+            center_height = height // 2
+            crop_size = 200  # Adjust this value to specify the size of the center region
+
+            left = center_width - crop_size // 2
+            upper = center_height - crop_size // 2
+            right = center_width + crop_size // 2
+            lower = center_height + crop_size // 2
+            cropped_image = screenshot.crop((left, upper, right, lower))
+            cropped_image.save("E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/screenshot.png")
+            screenshot_file = 'E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/screenshot.png'
+            im = Image.open("E:/BTECH/sem-3/dmgt-sem3/project dmgt sem3/Traffic1/Accident/Code/YOLO/darkflow/accident.jpg")
+            im.show()
+            pywhatkit.sendwhats_image("+919979289055", screenshot_file,"Accident Occured at "+selected_location,20)
+            pygame.quit()
+            webbrowser.open("http://127.0.0.1:5000")
+            sys.exit() 
             
-        if error == 1:
-            if timeElapsed == 6:
-                message = client.messages.create(
-                    from_='+14452924084',
-                    body='This Car '+selected_car+'  with RC number '+selected_rc+' has done Violence of Overtaking and High Speed',
-                    to='+919979289055'
-                )
-                error = 0
-                pygame.quit()
-                webbrowser.open("http://127.0.0.1:5000")
-                sys.exit() 
-                    
 
-        screen.blit(car1_img, (car1_x, car1_y))
-        screen.blit(car2_img, (car2_x, car2_y))
+        screen.blit(background,(0,0))   # display background in simulation
 
-
+        screen.blit(img1, (img1_x, img1_y))
+        screen.blit(img2, (img2_x, img2_y))
         for i in range(0,noOfSignals):  # display signal and set timer according to current status: green, yello, or red
             if(i==currentGreen):
                 if(currentYellow==1):
@@ -556,6 +544,7 @@ class Main:
             screen.blit(vehicle.currentImage, [vehicle.x, vehicle.y])
             # vehicle.render(screen)
             vehicle.move()
+        
         pygame.display.update()
 
 Main()
